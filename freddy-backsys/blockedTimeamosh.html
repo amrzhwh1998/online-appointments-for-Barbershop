@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Logo.jpg" type="image/x-icon">
+
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/9875d3aef3.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.5.1/vue-resource.min.js"></script>
+    <!--Material Icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Two+Tone" rel="stylesheet">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--vue.js-->
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-database.js"></script>
+    <script src="blockedamosh.js"></script>
+    <script src="firebase.js"></script>
+    
+
+    <title>Freddy</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_WuDHGN6ftQo4dxa0Kw9p5");
+        })();
+    </script>
+</head>
+
+<body style="
+width: 100%;
+overflow-x: hidden;
+background-color: #161616;
+
+">
+
+    <div id="main" style="
+  min-height: 350px;
+    text-align: end;
+    
+    background: #484848;
+    border-top-left-radius: 17px;
+    border-top-right-radius: 17px;
+    ">
+
+
+
+        <!--<select class="browser-default timeaemad" v-show="dateSelectedaemad == 'selectedaemad'">
+      <option value="">دوامنا اليوم:</option>
+      <option class="timeaemad" v-check v-for="time in allTimeaemad" :value="time">{{time}}</option>
+      </select>-->
+
+
+
+        <section>
+            <user></user>
+
+
+
+        </section>
+
+
+
+    </div>
+
+    </div>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .selestsBtn {
+            text-decoration: none;
+            border: 3px solid rgb(228, 203, 150);
+            color: transparent;
+            padding: 10px 20px;
+            width: 35%;
+            font-size: 28px;
+            font-family: sans-serif;
+            letter-spacing: 5px;
+            transition: all 0.5s;
+            position: relative;
+        }
+
+        .selestsBtn:before {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(228, 203, 150);
+            background: rgb(72, 72, 72);
+            font-size: 28px;
+            top: 0;
+            left: 100%;
+            font-family: sans-serif;
+            letter-spacing: 5px;
+            transition: all 1s;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            transform: scale(0) rotatey(0);
+            opacity: 0;
+        }
+
+        .selestsBtnAemad:after {
+            content: "فريد";
+
+        }
+
+        .selestsBtnAmosh:after {
+            content: "عباده";
+
+        }
+
+        .selestsBtn:hover:before {
+            transform: scale(1) rotatey(360deg);
+            left: 0;
+            opacity: 1;
+        }
+
+        .selestsBtn:after {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(228, 203, 150);
+            background: rgb(72, 72, 72);
+            font-size: 28px;
+            top: 0;
+            left: 0;
+            font-family: sans-serif;
+            letter-spacing: 5px;
+            transition: all 1s;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            transform: scale(1) rotatey(0);
+            opacity: 1;
+        }
+
+        .selestsBtnAemad:before {
+            content: url(icon.png);
+
+        }
+
+        .selestsBtnAmosh:before {
+            content: url(icon2.png);
+
+        }
+
+        .selestsBtn:hover:after {
+            transform: scale(0) rotatey(360deg);
+            left: -100%;
+            opacity: 0;
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+            border-top-left-radius: 17px;
+            border-top-right-radius: 17px;
+        }
+
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .navbar a:hover,
+        .dropdown:hover .dropbtn {
+            background-color: rgb(228, 203, 150);
+
+
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+
+<!--
+
+
+<section class="ftco-section">
+<div class="container">
+ 
+    <div class="row">
+        <div class="col-md-12">
+            <div class="elegant-calencar d-md-flex">
+                <div class="wrap-header d-flex align-items-center img" style="background-image: url(logo.jpg);">
+              <p id="reset">Today</p>
+            <div id="header" class="p-0">
+           
+            <div class="head-info">
+                <div class="head-month"></div>
+                <div class="head-day"></div>
+           
+          </div>
+          <div class="calendar-wrap">
+              
+            <table id="calendar" @click="oneclickevet">
+            <thead @click="oneclickevet">
+                <tr @click="oneclickevet">
+                <th>ראשון  احد</th>
+                <th>שני  اثنين</th>
+                <th>שלישי  ثلاثاء</th>
+                <th>רבעי  اربعاء</th>
+                <th>חמשי  خميس</th>
+                <th>שישי  جمعة</th>
+                <th>שבת  سبت</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr @click="oneclickevet">
+              <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+              <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+              <td class="tdamosh" @click="oneclickevet"  style=" text-align: center;"></td>
+              <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+              <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+              <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+              <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+            </tr>
+            <tr @click="oneclickevet">
+              <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+              <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+              <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+              <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+              <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+              <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+              <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+            </tr>
+            <tr @click="oneclickevet">
+            <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+            <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+            <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+            <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+            <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+            <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+            <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+            </tr>
+            <tr @click="oneclickevet">
+            <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+            <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+            <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+            <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+            <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+            <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+            <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+            </tr>
+            <tr @click="oneclickevet">
+            <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+              <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+              <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+              <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+              <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+              <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+              <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+            </tr>
+            <tr @click="oneclickevet">
+            <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+            <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+            <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+            <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+            <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+            <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+            <td class="tdamosh" @click="oneclickevet" style=" text-align: center;"></td>
+            </tr>
+            </tbody>
+            </table>
+          </div>
+        </div>
+        </div>
+    </div>
+</div>
+</section>-->
+    <script>
+
+
+
+        var scroll = new SmoothScroll('a[href*="#"]', {
+            speed: 1500,
+            speedAsDuration: true
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems, {});
+        });
+
+        var app = new Vue({
+            el: '#main',
+            data: {
+                links: [
+                    { title: "booking", icon: "alarm", id: "linkone" },
+                    { title: "bookingt", icon: "alarm", id: "linktow" },
+                ],
+
+                animationCon: false,
+
+            },
+
+
+        })
+
+        const indicator = document.querySelector('.nav-indicator');
+        const items = document.querySelectorAll('.nav-item');
+
+        function handleIndicator(el) {
+            items.forEach(item => {
+                item.classList.remove('is-active');
+                item.removeAttribute('style');
+            });
+
+            indicator.style.width = `${el.offsetWidth}px`;
+            indicator.style.left = `${el.offsetLeft}px`;
+            indicator.style.backgroundColor = el.getAttribute('active-color');
+
+            el.classList.add('is-active');
+            el.style.color = el.getAttribute('active-color');
+        }
+
+
+        items.forEach((item, index) => {
+            item.addEventListener('click', (e) => { handleIndicator(e.target) });
+            item.classList.contains('is-active') && handleIndicator(item);
+        });
+
+
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+
+
+
+</body>
+
+</html>
